@@ -1,7 +1,13 @@
-export default function SignIn() {
+import { FC } from "react";
+
+const SignIn: FC = () => {
   return (
     <main>
-      <span>Sign In</span>
+      <div>
+        
+      </div>
     </main>
   );
 }
+
+export default SignIn;

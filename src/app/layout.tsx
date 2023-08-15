@@ -1,5 +1,5 @@
 import Providers from '@/providers/global/providers';
-import './globals.css'
+import './globals.scss'
 import { Inter } from 'next/font/google'
 
 import { FC, ReactNode } from 'react';

@@ -24,16 +24,16 @@ export default function Spin(){
           <path
             d="M19.25 12L17.75 12"
             stroke="currentColor"
-            stroke-Width="1.5"
+            strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
           ></path>
           <path
             d="M17.1266 17.1265L16.0659 16.0659"
             stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           ></path>
           <path
             d="M12 17.75V19.25"

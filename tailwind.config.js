@@ -7,9 +7,8 @@ module.exports = {
   ],
   theme: {
     colors: {
-      purple: "#C40FDB",
-      white: "#FFFFFF",
-      black: "#000000",
+      purple: "#B34BDF",
+      black: "#171717",
       gray: "#E5E7EB",
     },
     fontFamily: {
