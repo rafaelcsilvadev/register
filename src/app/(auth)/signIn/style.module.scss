@@ -9,7 +9,7 @@
 
 
 //Creating login form
-.box-form {
+.box-custom-form {
     background-color: theme('colors.white');
     height: 50%;
     width: 90%;
@@ -26,51 +26,13 @@
         width: 33.8rem;
     }
 
-    &__span{
-        font-size: 3rem;
-        color: theme('colors.purple');
-    }
-
-    &__form{
+    &__div{
         width: 100%;
         margin-top: 40px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        &__input{
-            width: 90%;
-            height: 3rem;
-            border-radius: 0.5rem;
-            background-color: theme('colors.gray');
-            font-size: 1rem;
-            padding: 0px 8px;
-
-            &:focus {
-                outline: none;
-                border-width: 0.2rem;
-                border-color: theme('colors.purple');
-            }
-        }
-
-        &__button{
-            font-size: 1rem;
-            background-color: theme('colors.purple');
-            width: 90%;
-            height: 3rem;
-            color: theme('colors.white');
-            font-weight: 700;
-            border-radius: 0.5rem;
-            margin-top: 40px;
-
-            &:hover {
-                background-color: theme('colors.gray');
-                color: theme('colors.purple');
-                border-width: 0.2rem;
-                border-color: theme('colors.purple');
-            }
-        }
     }
 
     &__a {
@@ -80,3 +42,4 @@
         margin-top: 40px;
     }
 }
+//Created login form

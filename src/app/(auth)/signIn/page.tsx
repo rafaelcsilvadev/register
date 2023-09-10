@@ -1,40 +1,46 @@
 'use client'
 
-import { FC } from "react";
+import { FC, useState } from "react";
 
 import styles from "./style.module.scss";
-import { Bruno_Ace } from "next/font/google";
 
-const brunoAce = Bruno_Ace({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal"],
-});
-
-
+import Input from "../components/input/input";
+import Button from "../components/button/button";
+import Title from "../components/title/title";
 
 const SignIn: FC = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSave = () => {
+    console.log(`email: ${email}`);
+    console.log(`password: ${password}`);
+  }
+
   return (
     <main className={styles["main"]}>
-      {/* Creating login form */}
-      <div className={styles["box-form"]}>
-        <span className={`${brunoAce.className} ${styles["box-form__span"]}`}>
-          R - CMS
-        </span>
-        <form className={styles["box-form__form"]}>
-          <input
-            className={styles["box-form__form__input"]}
+      {/* Creating login custom form */}
+      <div className={styles["box-custom-form"]}>
+        <Title>Rafa - Register</Title>
+        <div className={styles["box-custom-form__div"]}>
+          <Input
+            type="email"
+            value={email}
+            onChange={(value) => setEmail(value)}
             placeholder="E-mail"
           />
-          <input
-            className={`${styles["box-form__form__input"]} mt-5`}
-            placeholder="Password"
+          <Input
+            className="mt-5"
             type="password"
+            value={password}
+            onChange={(value) => setPassword(value)}
+            placeholder="Password"
           />
-          <button className={styles["box-form__form__button"]}>Enter</button>
-        </form>
-        <a className={styles["box-form__a"]}>Register</a>
+          <Button onClick={() => handleSave()}>Enter</Button>
+        </div>
+        <a className={styles["box-custom-form__a"]}>Register</a>
       </div>
+      {/* Created login form */}
     </main>
   );
 };

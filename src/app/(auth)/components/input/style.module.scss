@@ -1,0 +1,14 @@
+.input{
+    width: 90%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    background-color: theme('colors.gray');
+    font-size: 1rem;
+    padding: 0px 8px;
+
+    &:focus {
+        outline: none;
+        border-width: 0.2rem;
+        border-color: theme('colors.purple');
+    }
+}
