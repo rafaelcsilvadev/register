@@ -1,22 +1,29 @@
-import { FC, HTMLInputTypeAttribute } from "react";
+import {
+  FC,
+  HTMLAttributes,
+  HTMLInputTypeAttribute,
+  InputHTMLAttributes,
+} from "react";
 import styles from "./style.module.scss";
 
-interface InputProps {
-  placeholder: string;
-  type: HTMLInputTypeAttribute;
+type InputElements = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "onChange" | "className" | "value"
+>;
+
+interface InputProps extends InputElements {
   onChange: (event: string) => void;
-  value: string;
   className?: string;
+  value?: string | number | readonly string[] | undefined;
 }
 
-const Input: FC<InputProps> = (props) => {
+const Input: FC<InputProps> = ({ onChange, className, value, ...rest }) => {
   return (
     <input
-      className={`${styles["input"]} ${props.className}`}
-      placeholder={props.placeholder}
-      type={props.type}
-      value={props.value}
-      onChange={(event) => props.onChange(event.target.value)}
+      className={`${styles["input"]} ${className}`}
+      value={value}
+      onChange={(event) => onChange(event.target.value)}
+      {...rest}
     />
   );
 };

@@ -1,0 +1,45 @@
+.main{
+    width: theme('width.screen');
+    height: theme('height.screen');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+//Creating register form
+.box-custom-form {
+    background-color: theme('colors.white');
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 20px 0;
+    box-shadow: theme('boxShadow.md');
+
+    @media screen and (min-width: 600px) {
+        height: 35rem;
+        width: 33.8rem;
+    }
+
+    &__div{
+        width: 100%;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__a {
+        font-size: 1rem;
+        color: theme('colors.purple');
+        text-decoration: underline;
+        margin-top: 40px;
+    }
+}
+//Created login form

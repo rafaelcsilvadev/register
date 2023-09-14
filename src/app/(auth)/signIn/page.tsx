@@ -7,12 +7,13 @@ import styles from "./style.module.scss";
 import Input from "../components/input/input";
 import Button from "../components/button/button";
 import Title from "../components/title/title";
+import Link from "next/link";
 
 const SignIn: FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSave = () => {
+  const handleDoSignIn = () => {
     console.log(`email: ${email}`);
     console.log(`password: ${password}`);
   }
@@ -36,9 +37,11 @@ const SignIn: FC = () => {
             onChange={(value) => setPassword(value)}
             placeholder="Password"
           />
-          <Button onClick={() => handleSave()}>Enter</Button>
+          <Button onClick={() => handleDoSignIn()}>Confirm</Button>
         </div>
-        <a className={styles["box-custom-form__a"]}>Register</a>
+        <Link href="/signUp" className={styles["box-custom-form__a"]}>
+          Sign Up
+        </Link>
       </div>
       {/* Created login form */}
     </main>

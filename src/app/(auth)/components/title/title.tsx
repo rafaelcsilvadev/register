@@ -1,6 +1,9 @@
 import { Bruno_Ace } from "next/font/google";
 import styles from "./style.module.scss";
-import { FC, ReactNode } from "react";
+import { FC, HTMLAttributes, ReactNode } from "react";
+
+
+type TitleElements = Omit<HTMLAttributes<HTMLSpanElement>, "className">;
 
 const brunoAce = Bruno_Ace({
   subsets: ["latin"],
@@ -8,15 +11,18 @@ const brunoAce = Bruno_Ace({
   style: ["normal"],
 });
 
-interface TitleProps {
-    children: ReactNode;
-    className?: string
+interface TitleProps extends TitleElements {
+  children: ReactNode;
+  className?: string;
 }
 
-const Title: FC<TitleProps> = (props) => {
+const Title: FC<TitleProps> = ({children, className, ...rest}) => {
   return (
-    <span className={`${brunoAce.className} ${styles["span"]} ${props.className}`}>
-      {props.children}
+    <span
+      className={`${brunoAce.className} ${styles["span"]} ${className}`}
+      {...rest}
+    >
+      {children}
     </span>
   );
 };

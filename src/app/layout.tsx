@@ -15,8 +15,8 @@ const inter = Inter({
 })
 
 export const metadata = {
-  title: 'CMS - Rafa',
-  description: "Project CMS of Rafa's Portfolio",
+  title: 'Rafa - Register',
+  description: "Project Register of Rafa's Portfolio",
 }
 
 const RootLayout: FC<PropsRootLayout> = ({
