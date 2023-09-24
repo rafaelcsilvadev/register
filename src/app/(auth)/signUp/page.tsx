@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { FC, useState } from "react";
-import Button from "../components/button/button";
-import Input from "../components/input/input";
-import Title from "../components/title/title";
+import Button from "../components/button";
+import Input from "../components/input";
+import Title from "../components/title";
 
 import styles from "./style.module.scss";
 

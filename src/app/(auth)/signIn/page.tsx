@@ -4,9 +4,9 @@ import { FC, useState } from "react";
 
 import styles from "./style.module.scss";
 
-import Input from "../components/input/input";
-import Button from "../components/button/button";
-import Title from "../components/title/title";
+import Input from "../components/input";
+import Button from "../components/button";
+import Title from "../components/title";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 

@@ -1,7 +1,5 @@
 import {
   FC,
-  HTMLAttributes,
-  HTMLInputTypeAttribute,
   InputHTMLAttributes,
 } from "react";
 import styles from "./style.module.scss";
@@ -14,7 +12,7 @@ type InputElements = Omit<
 interface InputProps extends InputElements {
   onChange: (event: string) => void;
   className?: string;
-  value?: string | number | readonly string[] | undefined;
+  value?: string | number | readonly string[];
 }
 
 const Input: FC<InputProps> = ({ onChange, className, value, ...rest }) => {
