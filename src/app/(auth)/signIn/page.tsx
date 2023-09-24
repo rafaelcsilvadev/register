@@ -8,14 +8,19 @@ import Input from "../components/input/input";
 import Button from "../components/button/button";
 import Title from "../components/title/title";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const SignIn: FC = () => {
+  const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleDoSignIn = () => {
     console.log(`email: ${email}`);
     console.log(`password: ${password}`);
+
+    router.push('/profile');
   }
 
   return (
