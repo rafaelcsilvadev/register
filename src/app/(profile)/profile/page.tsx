@@ -1,9 +1,9 @@
-import NavBar from '@/app/(auth)/components/navBar';
+import * as Components from "../../components";
 
 export default function Menu() {
   return (
     <main>
-      <NavBar/>
+      <Components.NavBar />
     </main>
   );
 }

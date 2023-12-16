@@ -1,66 +1,52 @@
 'use client'
 
 import Link from "next/link";
-import { FC, useState } from "react";
-import Button from "../components/button";
-import Input from "../components/input";
-import Title from "../components/title";
-
-import styles from "./style.module.scss";
+import { FC } from "react";
+import * as Components from "../../components";
+import styles from "./styles.module.scss";
+import { useSignUp } from "./services";
 
 const Register: FC = () => {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-
-  const handleDoSignUp = () => {
-    console.log(`email: ${email}`);
-    console.log(`name: ${name}`);
-    console.log(`password: ${password}`);
-    console.log(`confirmPassword: ${confirmPassword}`);
-  };
+  const methods = useSignUp();
 
   return (
     <main className={styles["main"]}>
-      {/* Creating register custom form */}
       <div className={styles["box-custom-form"]}>
-        <Title>Sign Up</Title>
+        <Components.Title>Sign Up</Components.Title>
         <div className={styles["box-custom-form__div"]}>
-          <Input
+          <Components.Input
             type="text"
-            value={name}
-            onChange={(value) => setName(value)}
+            value={methods.name}
+            onChange={(value) => methods.setName(value)}
             placeholder="Name"
           />
-          <Input
+          <Components.Input
             className="mt-5"
             type="email"
-            value={email}
-            onChange={(value) => setEmail(value)}
+            value={methods.email}
+            onChange={(value) => methods.setEmail(value)}
             placeholder="E-mail"
           />
-          <Input
+          <Components.Input
             className="mt-5"
             type="password"
-            value={password}
-            onChange={(value) => setPassword(value)}
+            value={methods.password}
+            onChange={(value) => methods.setPassword(value)}
             placeholder="Password"
           />
-          <Input
+          <Components.Input
             className="mt-5"
             type="password"
-            value={confirmPassword}
-            onChange={(value) => setConfirmPassword(value)}
+            value={methods.confirmPassword}
+            onChange={(value) => methods.setConfirmPassword(value)}
             placeholder="Confirm Password"
           />
-          <Button onClick={() => handleDoSignUp()}>Confirm</Button>
+          <Components.Button onClick={() => methods.handleDoSignUp()}>Confirm</Components.Button>
         </div>
         <Link href="/signIn" className={styles["box-custom-form__a"]}>
           Sign In
         </Link>
       </div>
-      {/* Created register form */}
     </main>
   );
 }

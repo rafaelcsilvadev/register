@@ -1,5 +1,5 @@
 import { Bruno_Ace } from "next/font/google";
-import styles from "./style.module.scss";
+import styles from "./styles.module.scss";
 import { FC, HTMLAttributes, ReactNode } from "react";
 
 

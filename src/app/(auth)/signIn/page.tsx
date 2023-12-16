@@ -1,54 +1,38 @@
 'use client'
 
-import { FC, useState } from "react";
-
-import styles from "./style.module.scss";
-
-import Input from "../components/input";
-import Button from "../components/button";
-import Title from "../components/title";
+import { FC } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import styles from "./styles.module.scss";
+import * as Components from '../../components';
+import { useSignIn } from "./services";
 
 const SignIn: FC = () => {
-  const router = useRouter();
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleDoSignIn = () => {
-    console.log(`email: ${email}`);
-    console.log(`password: ${password}`);
-
-    router.push('/profile');
-  }
+  const methods = useSignIn();
 
   return (
     <main className={styles["main"]}>
-      {/* Creating login custom form */}
       <div className={styles["box-custom-form"]}>
-        <Title>Rafa - Register</Title>
+        <Components.Title>Rafa - Register</Components.Title>
         <div className={styles["box-custom-form__div"]}>
-          <Input
+          <Components.Input
             type="email"
-            value={email}
-            onChange={(value) => setEmail(value)}
+            value={methods.email}
+            onChange={(value) => methods.setEmail(value)}
             placeholder="E-mail"
           />
-          <Input
+          <Components.Input
             className="mt-5"
             type="password"
-            value={password}
-            onChange={(value) => setPassword(value)}
+            value={methods.password}
+            onChange={(value) => methods.setPassword(value)}
             placeholder="Password"
           />
-          <Button onClick={() => handleDoSignIn()}>Confirm</Button>
+          <Components.Button onClick={() => methods.handleDoSignIn()}>Confirm</Components.Button>
         </div>
         <Link href="/signUp" className={styles["box-custom-form__a"]}>
           Sign Up
         </Link>
       </div>
-      {/* Created login form */}
     </main>
   );
 };

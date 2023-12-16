@@ -1,7 +1,7 @@
 "use client";
 
 import { STORAGE_KEY_AUTH_TOKEN } from "@/constants/localStorage";
-import { ROUTES_SIGN_IN, ROUTES_CMS_MENU } from "@/constants/routes";
+import { ROUTES_SIGN_IN, ROUTES_PROFILE } from "@/constants/routes";
 import { useRouter } from "next/navigation";
 import {
   createContext,
@@ -31,7 +31,7 @@ const AuthProvider: FC<PropsAuthProvider> = ({ children }) => {
     if (!token) {
       router.push(ROUTES_SIGN_IN);
     } else {
-      router.push(ROUTES_CMS_MENU);
+      router.push(ROUTES_PROFILE);
     }
   });
 

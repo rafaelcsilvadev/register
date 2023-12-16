@@ -1,5 +1,5 @@
 import { Bruno_Ace } from "next/font/google";
-import styles from "./style.module.scss";
+import styles from "./styles.module.scss";
 
 const brunoAce = Bruno_Ace({
   subsets: ["latin"],

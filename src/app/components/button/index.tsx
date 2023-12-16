@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, FC, ReactNode } from "react";
-import styles from "./style.module.scss";
+import styles from "./styles.module.scss";
 
 type ButtonElements = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,

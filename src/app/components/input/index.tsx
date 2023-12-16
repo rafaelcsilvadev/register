@@ -2,7 +2,7 @@ import {
   FC,
   InputHTMLAttributes,
 } from "react";
-import styles from "./style.module.scss";
+import styles from "./styles.module.scss";
 
 type InputElements = Omit<
   InputHTMLAttributes<HTMLInputElement>,
