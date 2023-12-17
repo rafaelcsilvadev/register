@@ -1,7 +1,8 @@
+"use client";
+
 import { Bruno_Ace } from "next/font/google";
 import styles from "./styles.module.scss";
 import { FC, HTMLAttributes, ReactNode } from "react";
-
 
 type TitleElements = Omit<HTMLAttributes<HTMLSpanElement>, "className">;
 
@@ -16,7 +17,7 @@ interface TitleProps extends TitleElements {
   className?: string;
 }
 
-const Title: FC<TitleProps> = ({children, className, ...rest}) => {
+const Title: FC<TitleProps> = ({ children, className, ...rest }) => {
   return (
     <span
       className={`${brunoAce.className} ${styles["span"]} ${className}`}

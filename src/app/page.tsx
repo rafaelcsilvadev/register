@@ -1,12 +1,12 @@
 "use client";
 
-import Spin from "@/components/spin/spin";
+import * as Components from "./components";
 import styles from "./styles.module.scss";
 
 export default function Start() {
   return (
     <main className={styles.main}>
-      <Spin />
+      <Components.Spin />
     </main>
   );
 }

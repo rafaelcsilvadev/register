@@ -1,10 +1,12 @@
+"use client";
+
 import { ButtonHTMLAttributes, FC, ReactNode } from "react";
 import styles from "./styles.module.scss";
 
 type ButtonElements = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,
   "onClick" | "className"
-  >;
+>;
 
 interface ButtonProps extends ButtonElements {
   children: ReactNode;
@@ -12,7 +14,7 @@ interface ButtonProps extends ButtonElements {
   className?: string;
 }
 
-const Button: FC<ButtonProps> = ({children, onClick, className, ...rest}) => {
+const Button: FC<ButtonProps> = ({ children, onClick, className, ...rest }) => {
   return (
     <button
       className={`${styles["button"]} ${className}`}
